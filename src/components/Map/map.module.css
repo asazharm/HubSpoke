@@ -1,0 +1,196 @@
+.map {
+    margin-top: 30px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: #131313  2px;
+    /*background-color: whitesmoke;*/
+}
+
+
+.state {
+    transition-duration: 0.1s;
+    cursor: zoom-in;
+}
+
+.state:hover .statePath {
+    transition-duration: .5s ;
+    transform: translate(-3px,-3px);
+    filter: url(#dropShadow);
+    stroke-width: 0px;
+}
+
+#dropShadow{
+    box-shadow:1px 1px 1px #707070;
+}
+
+.state:hover .stateCenter {
+    opacity: 1;
+}
+
+.state:hover .stateName {
+    transition-duration: .3s;
+    opacity: 1;
+    font-size: 16px;
+}
+
+.statePath{
+    transition-duration: .5s;
+    stroke-width: 1px;
+    stroke: whitesmoke;
+    opacity: 0.5;
+    animation: statePath 1s ease;
+}
+
+.stateCenter {
+    opacity: 0;
+    fill: gray;
+    pointer-events: none;
+}
+
+.stateName {
+    transition-duration: .3s;
+    animation: stateName 1s ease;
+    text-align: center;
+    text-anchor: middle;
+    /*opacity: 0.5;*/
+    fill: #131313;
+    font-family: Tahoma;
+    font-size: 8px;
+    pointer-events: none;
+}
+
+
+.clicked {
+    transition-duration: 1s;
+    width: 1000px;
+    animation: svgFullAppearance 1s ease;
+    fill: #f5f5f5;
+    stroke: gray;
+    cursor: zoom-out;
+}
+
+
+
+.city:hover {
+
+}
+
+.cityName {
+    transition-duration: .3s;
+    animation: stateName 1s ease;
+    text-align: center;
+    /*text-anchor: middle;*/
+    /*opacity: 0.5;*/
+    fill: grey;
+    font-family: Tahoma;
+    font-size: 8px;
+    cursor: pointer;
+    /*pointer-events: none;*/
+}
+
+.cityName:hover{
+    /*animation: stateName 1s ease;*/
+    transition-duration: .5s;
+    font-size: 18px;
+    fill: #131313;
+}
+
+.cityName:hover .line{
+    opacity: 1;
+}
+
+.cityName:hover .city {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: translate(2);
+}
+[districtColor="green"] {
+    fill: #4DE600;
+    opacity: .4;
+}
+
+[districtColor="green"]:hover {
+    fill: #4DE600;
+    opacity: 1;
+}
+
+
+[districtColor="blue"] {
+    fill: #00A8E6;
+    opacity: .4;
+}
+
+[districtColor="blue"]:hover {
+    fill: #00A8E6;
+    opacity: 1;
+}
+
+[districtColor="red"] {
+    fill: #E60000;
+    opacity: .4;
+}
+
+
+[districtColor="red"]:hover {
+    fill: #E60000;
+    opacity: 1;
+}
+
+
+[districtColor="yellow"] {
+    fill: #FFFF00;
+    opacity: .4;
+}
+
+[districtColor="yellow"]:hover {
+    fill: #FFFF00;
+    opacity: 1;
+}
+
+[cityColor="green"] {
+    fill: #4DE600;
+}
+
+[cityColor="blue"] {
+    fill: #00A8E6;
+}
+
+[cityColor="red"] {
+    fill: #E60000;
+}
+
+[cityColor="yellow"] {
+    fill: #FFFF00;
+}
+
+[cityColor="violet"] {
+    fill: #FF73DE;
+}
+
+@keyframes statePath {
+    from {
+        fill: #fff
+    }
+
+}
+
+@keyframes stateName {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes svgFullAppearance {
+    from{
+        fill: white;
+        stroke: white;
+    } to {
+        fill: #f5f5f5;
+              stroke: gray;
+          }
+}
